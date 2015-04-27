@@ -1,4 +1,4 @@
-# Project Name #
+# Hand the DJ #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,29 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Intro ##
+  > Think Twitter for music.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Hang the DJ, the hottest new way to discover and enjoy music on the web, is a crowdsourced jukebox.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Users can post songs and videos - their favorites, what they're listening to now, or new discoveries - either to their followers or in shared listening rooms. By following other users, friends, celebreties, DJs, etc., users can easily discover fresh tunes.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > There are a lot of music discovery tools that rely heavily on technology and algorithms, but do not put the social aspect of sharing music front and center. We all love to share our music favs and discoveries with friends and the world; but don't really have a focused platform or space to do that.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Hang the DJ solves this by placing the sharing experience front and center. All the music on the site was shared by other users.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "Hang the DJ is a global crowdsoureced jukebox that brings out the DJ in all of us."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > To get started simply register, start following other users or enter a listening room and hit play. That's it!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Finally a music service that I love using. If I'm at work or on the train, I'm definitely listening to Hang the DJ!"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > To start using Hang the DJ simply head over to http://www.hangthedj.io and enjoy!
