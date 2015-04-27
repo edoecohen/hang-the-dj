@@ -1,7 +1,8 @@
 var myApp = angular.module('myApp', []).config(function($sceDelegateProvider){
 	$sceDelegateProvider.resourceUrlWhitelist([
 	  'self',
-	  'http://www.youtube.com/**'
+	  'http://www.youtube.com/**',
+    'https://www.youtube.com/**'
 	  ]);
 });
 
