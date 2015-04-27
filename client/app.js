@@ -33,12 +33,12 @@ myApp.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.getVidSrc = function (url) {
 		$scope.vidID = youtube_parser(url);
-  	$scope.vidSrc = 'http://www.youtube.com/embed/' + $scope.vidID;
+  	$scope.vidSrc = '//www.youtube.com/embed/' + $scope.vidID;
 	};
 
 	$scope.addSong = function(){
 		var vidID = youtube_parser($scope.url);
-  	$scope.newSrc = 'http://www.youtube.com/embed/' + vidID;
+  	$scope.newSrc = '//www.youtube.com/embed/' + vidID;
 		getVideoInfo(vidID);
 	}
 
