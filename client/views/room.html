@@ -1,0 +1,45 @@
+<h3>Add a Song</h3>
+<form ng-submit="addSong()">
+  <input ng-blur="getVidSrc(url)" ng-model="url"><br>
+  <textarea cols="40" rows="5" ng-model="description"></textarea><br>
+  <button>Add Song</button>
+</form>
+
+<p>Preview</p>
+
+<iframe class="youtube-player" type="text/html" width="200px" height="auto" ng-src="{{ vidSrc }}" allowfullscreen frameborder="0"> </iframe>
+
+<hr>
+<hr>
+
+<div ng-show='showVidPlayer'>
+  <h3>Music Player</h3>
+    <div class="videoPlayer">
+      <iframe class="youtube-player" type="text/html" width="853px" height="480px" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
+      <div>Previous</div>
+      <h3>{{ data.snippet.title }}</h3>
+      <div>Next</div>
+    </div>
+  </h3>
+
+</div>
+
+<div class="songList">
+  <div ng-repeat="song in songs">
+    <div class="userInfo">
+      <img src="">
+      <div class="userName">George Jackson</div>
+      <div class="timestamp">18 hrs ago</div>
+    </div>
+    <div class="songInfo">
+      <img src="{{ song.thumb }}" />
+      <div class="songTitle">{{ song.title }}</div>
+      <ul>
+        <li class="listens">Views: {{ song.listens }}</li>
+        <li class="likes">Likes: {{ song.likes}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

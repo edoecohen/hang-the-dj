@@ -1,0 +1,21 @@
+
+<h2>Select a Room</h2>
+
+<form ng-submit="createRoom()">
+  <input ng-model="roomName"><br>
+  <input ng-model="roomPic"><br>
+  <button>Create Room</button>
+</form>
+<hr>
+
+<button>Create a Room</button>
+<span>Search Rooms</span><input ng-model="query">
+<div class="roomsContainer">
+  <div class="oneRoom" ng-repeat="room in rooms | orderBy: 'roomName' | filter: query" style="background-image: url({{room.roomPic}}); background-size: cover; background-repeat: none; width: 200px; color: white">
+    <h4>{{ room.roomName }}</h4>
+    <ul>
+      <li>followers: {{ room.followers }}</li>
+      <li>songs: {{ room.songs }}</li>
+    </ul>
+  </div>
+</div>

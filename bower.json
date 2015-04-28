@@ -1,0 +1,21 @@
+{
+  "name": "hang-the-dj",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://desolate-thicket-7053.herokuapp.com/",
+  "authors": [
+    "edoecohen <edoecohen@gmail.com>"
+  ],
+  "description": "Crowdsourced jukebox.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.3.15"
+  }
+}

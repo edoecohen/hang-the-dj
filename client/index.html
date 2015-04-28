@@ -1,59 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="hangDJ">
 <head>
 	<meta charset="UTF-8">
-	<script src="./lib/angular.js"></script>
-	<script src="./app.js"></script>
-	<title>Hang the DJ Test</title>
+  <title>Hang the DJ</title>
 </head>
-<body ng-controller="MainCtrl">
 
-	
-	<h1>Hang the DJ</h1>
-	<form ng-submit="addSong()">
-		<input ng-blur="getVidSrc(url)" ng-model="url"><br>
-		<textarea cols="40" rows="5"></textarea><br>
-		<button ng-click="fetch(url)">Add Song</button>
-	</form>
-	<p>Preview</p>
-	<iframe class="youtube-player" type="text/html" width="200px" height="auto" ng-src="{{ vidSrc }}" allowfullscreen frameborder="0"> </iframe>
-	<hr>
+<body ng-controller="RoomsCtrl">
 
-	<div ng-show='showNewSong'>
-		<div class="videoPlayer">
-			<iframe class="youtube-player" type="text/html" width="853px" height="480px" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
-			<h3>{{ data.snippet.title }}</h3>
-		  <img src="{{ data.snippet.thumbnails.medium.url }}" />
-		  <i>{{ data.snippet.description }}</i>
-
-		</div>
-	</div>
+  
+  <h1>Hang the DJ</h1>
+  <div ng-view></div>
 
 <!-- 
-	<iframe id="ytplayer" ng-src="{{newVid}}" type="text/html" width="640" height="390"
+  <iframe id="ytplayer" ng-src="{{newVid}}" type="text/html" width="640" height="390"
   frameborder="0" ng-show="showplayer" />
   <h4>{{ data.snippet.title }}</h4>
- -->	
+ -->  
+
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+	<script src="./controllers/app.js"></script>
+  <script src="./controllers/roomsCtrl.js"></script>
+  <script src="./controllers/roomCtrl.js"></script>
+
+
 </body>
 </html>
 
-<!-- 
-<script>
-  angular.module('submitExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.list = [];
-      $scope.text = 'hello';
-      $scope.submit = function() {
-        if ($scope.text) {
-          $scope.list.push(this.text);
-          $scope.text = '';
-        }
-      };
-    }]);
-</script>
-<form ng-submit="submit()" ng-controller="ExampleController">
-  Enter text and hit enter:
-  <input type="text" ng-model="text" name="text" />
-  <input type="submit" id="submit" value="Submit" />
-  <pre>list={{list}}</pre>
-</form> -->
