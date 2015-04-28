@@ -1,0 +1,336 @@
+.body {
+  background: #DFDFDF;
+}
+
+.navbar {
+  background: #0F0F0F;
+  margin-bottom: 0;
+}
+.navbar h1 {
+  margin-top: 13px;
+  color: white;
+  font-family: 'Nanum Brush Script', serif;
+  background-image: url(assets/logowhite.png);
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 50px;
+}
+
+/***** ROOM HEADER *****/
+.roomHeader {
+  height: 300px;
+  background-color: black;
+  background: url(assets/hr_background.jpg) bottom no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.roomHeader h1 {
+  color: white;
+  position: absolute;
+  bottom: 25px;
+  left: 45px;
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.roomHeader button {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 15px;
+  font-size: 1.2em;
+  color: white;
+  position: absolute;
+  right: 45px;
+  bottom: 25px;
+}
+.roomHeader button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+button:focus {
+  outline: none;
+}
+
+
+.roomContainer {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+
+/***** LEFT PLAYER *****/
+.leftPlayer {
+  background-color: #0F0F0F;
+  padding: 0;
+}
+.userInfo {
+  color: grey;
+  font-size: 0.8 em;
+  margin: 10px 0 25px 45px;
+}
+.userInfo .userPic {
+  float: left;
+  margin-right: 8px;
+}
+.userInfo .userPic img {
+  border-radius: 50%;
+  width: 35px;
+  margin-top: 3px;
+}
+.userInfo .userName {
+  color: white;
+}
+.userInfo .postTime {
+  font-size: 0.8em;
+}
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.videoControls {
+  height: 100px;
+  width: 90%;
+  margin: 20px auto;
+}
+.back {
+  background: url(assets/djSprite.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  background-position: 0 -2px;
+  background-size: 65px;
+  display: inline-block;
+}
+.back:hover {
+  cursor: pointer;
+  background-position: 0 -35px;
+}
+.next {
+  background: url(assets/djSprite.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  background-position: -28px -2px;
+  background-size: 65px;
+  display: inline-block;
+}
+.next:hover {
+  cursor: pointer;
+  background-position: -28px -35px;
+}
+.songInfo {
+  color: white;
+  display: inline-block;
+  width: 340px;
+  margin-left: 20px;
+}
+.songInfo h1 {
+  font-size: 1.2em;
+  margin: 0;
+}
+.songInfo ul {
+  list-style: none;
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+.songInfo ul li {
+  display: inline-block;
+  color: grey;
+}
+.songInfo ul li:first-child {
+  border-right: 1px solid grey;
+  padding-right: 12px;
+  margin-right: 10px;
+}
+
+/***** SONG QUEUE *****/
+
+.songQueue {
+  padding: 0;
+}
+.songInQueue {
+  padding: 10px 15px;
+  border-bottom: 1px solid grey;
+}
+.songInQueue:nth-child(even) {background: #F7F7F7;}
+.songInQueue:nth-child(odd) {background: white;}
+.queueUserInfo .userPic {
+  float: left;
+  margin-right: 8px;
+}
+.queueUserInfo {
+  float: left;
+  width: 35%;
+  font-size: 0.9em;
+}
+.queueUserInfo .userPic img {
+  border-radius: 50%;
+  width: 35px;
+  margin-top: 3px;
+}
+.queueUserInfo .songComment {
+  display: inline-block;
+  width: 155px;
+  border: 1px solid #D0D0D0;
+  border-radius: 3px;
+  background: #EFEFEF;
+  padding: 3px 7px;
+  position: relative;
+}
+.songComment:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -5px;
+  top: 8px;
+  border: 4px solid;
+  border-color: #D0D0D0 #D0D0D0 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  transform: rotate(-135deg);
+  border-radius: 1px;
+}
+.songComment:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -4px;
+  top: 8px;
+  border: 4px solid;
+  border-color: #EFEFEF #EFEFEF transparent transparent;
+  transform: rotate(-135deg);
+  border-radius: 1px;
+}
+.queueUserInfo .details {
+  margin-left: 44px;
+  margin-top: 2px;
+}
+.queueUserInfo .postTime {
+  font-size: 0.9em;
+  color: #A5A5A5;
+}
+.queueSongInfo {
+  display: inline-block;
+  width: 64%;
+}
+.queueSongInfo img {
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+.queueSongInfo .songTitle {
+  font-weight: bold;
+}
+.queueSongInfo ul {
+  list-style: none;
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+.queueSongInfo ul li {
+  display: inline-block;
+  color: grey;
+}
+.queueSongInfo ul li:first-child {
+  border-right: 1px solid #E2E2E2;
+  padding-right: 12px;
+  margin-right: 10px;
+}
+
+/***** ADD SONG  ******/
+
+.addSong {
+  background: #262626;
+  color: white;
+  padding: 15px 20px;
+}
+.addSong h4 {
+  display: inline-block;
+}
+
+.addSong form {
+  margin: 20px 40px 20px 0;
+  float: left;
+  width: 300px;
+}
+.addSong input {
+  border: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid white;
+  padding: 0 0 3px 7px;
+}
+.addSong input:focus, .addSong textarea:focus {
+  outline: none;
+}
+.addSong textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  margin-top: 30px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.preview {
+  width: 280px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.preview p {
+  color: #4D4D4D;
+  font-size: 0.9em;
+}
+.preview .videoWrapper {
+  border: 1px solid #3F3F3F;
+}
+
+.closeAddSong {
+  background: url(assets/djSprite.png) no-repeat;
+  width: 24px;
+  height: 26px;
+  background-position: -26px -51px;
+  background-size: 50px;
+  display: inline-block;
+  float: right;
+  margin: 3px 3px 0 0;
+}
+.closeAddSong:hover {
+  cursor: pointer;
+  background-position: -1px -51px;
+}
+.addSong footer {
+  border-top: 1px solid #3F3F3F;
+  padding-top: 15px;
+  height: 50px;
+}
+.addSong footer button {
+  float: right;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 30px;
+  font-size: 1em;
+  color: white;
+}
+.addSong footer button:hover {
+  background: white;
+  color: #262626;
+}

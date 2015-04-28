@@ -1,27 +1,49 @@
 angular.module('hangDJ')
-.controller('RoomCtrl', ['$scope', '$http', function($scope, $http){
-  $scope.data = {};
+.controller('RoomCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
   $scope.vidSrc = '';
   $scope.vidURL = '';
   $scope.showVidPlayer = true;
+  $scope.showAddSong = false;
+  $scope.newSrc = '//www.youtube.com/embed/ZcX0vOVlEr8?modestbranding=1&showinfo=0&fs=0';
+
+  $scope.getAllSongs = function(){
+    return $http({
+      method: 'GET',
+      url: '/room'
+    })
+    .then(function(resp){
+      $scope.songs = resp.data;
+      console.log('songs in client:', $scope.songs);
+    })
+  };
+
+  $scope.getAllSongs();
+
+  $scope.showplayer = true;
+
 
   var youtube_parser = function(url){
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
     if (match&&match[7].length==11){
-        return match[7];
-    }else{
-        alert("Url incorrecta");
-    }
+      return match[7];
+    };
+  };
+
+  $scope.getVidSrc = function (url) {
+    $scope.vidID = youtube_parser(url);
+    $scope.vidSrc = '//www.youtube.com/embed/' + $scope.vidID;
+    console.log('getting vid source!');
   };
 
   $scope.addSong = function(){
     var vidID = youtube_parser($scope.url);
-    $scope.newSrc = '//www.youtube.com/embed/' + vidID;
-    getVideoInfo(vidID);
+    // $scope.newSrc = '//www.youtube.com/embed/' + vidID;
+    $scope.getVideoInfo(vidID);
+    $scope.showAddSong = false;
   }
 
-  var getVideoInfo = function(id){
+  $scope.getVideoInfo = function(id){
     return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyAQMpivS49ylLQln7boLwFsG-eKQqzm1Os&part=snippet,contentDetails,statistics,status'
@@ -30,14 +52,15 @@ angular.module('hangDJ')
       var data = resp.data.items[0];
 
       $scope.newSong = {};
-      $scope.newSong.thumb = data.snippet.thumbnails.medium.url;
-      $scope.newSong.sourceID = data.snippet.id;
+      $scope.newSong.thumb = data.snippet.thumbnails.default.url;
+      $scope.newSong.sourceID = data.id;
       $scope.newSong.title = data.snippet.title;
       $scope.newSong.comment = $scope.comment;
       $scope.newSong.listens = 0;
       $scope.newSong.likes = 0;
       $scope.newSong.shares = 0;
       $scope.newSong.source = 'youtube';
+      console.log('new song!!!', data);
 
       $scope.songs.push($scope.newSong); 
       $scope.saveSong($scope.newSong);
@@ -57,45 +80,9 @@ angular.module('hangDJ')
       });
   };
 
-  $scope.getVidSrc = function (url) {
-    $scope.vidID = youtube_parser(url);
-    $scope.vidSrc = '//www.youtube.com/embed/' + $scope.vidID;
-  };
-
-  $scope.getAllSongs = function(){
-    return $http({
-      method: 'GET',
-      url: '/room'
-    })
-    .then(function(resp){
-      $scope.songs = resp.data;
-      console.log('songs in client:', $scope.songs);
-    })
-  };
-
-  $scope.getAllSongs();
-
-  // var getAll = function () {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/links'
-  //   })
-  //   .then(function (resp) {
-  //     return resp.data;
-  //   });
-  // };
-
-  // var addLink = function (link) {
-  //   return $http({
-  //     method: 'POST',
-  //     url: '/api/links',
-  //     data: link
-  //   });
-  // };
 
 
-  $scope.showplayer = true;
-
+}]);
   // $scope.songs = [
   //   {
   //     thumb: 'https://i.ytimg.com/vi/cE6wxDqdOV0/mqdefault.jpg',
@@ -136,4 +123,3 @@ angular.module('hangDJ')
 
 
 
-}]);

@@ -1,4 +1,4 @@
-angular.module('hangDJ', ['ngRoute']).config(function($sceDelegateProvider){
+angular.module('hangDJ', ['ngRoute', 'ui.bootstrap']).config(function($sceDelegateProvider){
 	$sceDelegateProvider.resourceUrlWhitelist([
 	  'self',
 	  'http://www.youtube.com/**',

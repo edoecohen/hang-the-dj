@@ -1,47 +1,97 @@
-<h3>Add a Song</h3>
-<form ng-submit="addSong()">
-  <input ng-blur="getVidSrc(url)" ng-model="url"><br>
-  <textarea ng-model="comment" ng-maxlength="140">Comment...</textarea>
-
-  <button>Add Song</button>
-</form>
-
-<p>Preview</p>
-
-<iframe class="youtube-player" type="text/html" width="200px" height="auto" ng-src="{{ vidSrc }}" allowfullscreen frameborder="0"> </iframe>
-
-<hr>
-<hr>
-
-<div ng-show='showVidPlayer'>
-  <h3>Music Player</h3>
-    <div class="videoPlayer">
-      <iframe class="youtube-player" type="text/html" width="853px" height="480px" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
-      <div>Previous</div>
-      <h3>{{ data.snippet.title }}</h3>
-      <div>Next</div>
-    </div>
-  </h3>
-
-</div>
-
-<div class="songList">
-  <div ng-repeat="song in songs">
-    <div class="userInfo">
-      <img src="">
-      <div class="userName">George Jackson</div>
-      <div class="timestamp">18 hrs ago</div>
-    </div>
-    <div class="songInfo">
-      <img src="{{ song.thumb }}" />
-      <div class="songTitle">{{ song.title }}</div>
-      <div class="songComment">{{ song.comment }}</div>
-      <ul>
-        <li class="listens">Views: {{ song.listens }}</li>
-        <li class="likes">Likes: {{ song.likes}}</li>
-      </ul>
+<div class="container">
+  <div class="roomHeader row">
+    <div class="layer">
+      <h1>Hack Reactor Jams</h1>
+      <button ng-click="showAddSong = true">Add a Song</button>
     </div>
   </div>
+</div>
+<div class="container">
+  
+  <div class="row roomContainer">
+    
+    <div class="col-md-5 leftPlayer">
+      <div ng-show='showVidPlayer'>
+        <div class="userInfo">
+          <div class="userPic">
+            <img src="./assets/eli.jpg" />
+          </div>
+          <div class="postedBy">Posted by <span class="userName">Eli Miller</span></div>
+          <div class="postTime">18 hrs ago</div>
+        </div>
+
+        <div class="videoPlayer">
+          <div class="videoWrapper">
+            <iframe class="youtube-player" type="text/html" width="100%" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
+          </div>
+          <div class="videoControls">
+            <div class="back"></div>
+            <!-- <h3>{{ data.snippet.title }}</h3> -->
+            <div class="songInfo">
+              <h1>The Beatles - Yellow Submarine</h1>
+              <ul>
+                <li class="views">21 views</li>
+                <li class="likes">12 likes</li>
+              </ul>
+            </div>
+            <div class="next"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-7 songQueue">
+
+      <div class="addSong" ng-show="showAddSong">
+        <header>
+          <h4>Add a Song</h4>
+          <div class='closeAddSong' ng-click="showAddSong = false"></div>
+        </header>
+        <main>
+          <form>
+            <input ng-blur="getVidSrc(url)" ng-model="url" placeholder="Enter Youtube URL..."><br>
+            <textarea ng-model="comment" ng-maxlength="140" placeholder="Comment..."></textarea>
+          </form>
+          <div class="preview">
+            <p>Preview</p>
+            <div class="videoWrapper">
+              <iframe class="youtube-player" type="text/html" ng-src="{{ vidSrc }}" allowfullscreen frameborder="0"> </iframe>
+            </div>
+          </div>
+        </main>
+        <footer>
+          <button ng-click="addSong()">Add</button>
+        </footer>
+      </div>
+
+
+    
+      <div ng-repeat="song in songs" class="songInQueue">
+        <div class="queueUserInfo">
+          <div class="userPic">
+            <img src="./assets/george.jpg" />
+          </div>
+          <div class="songComment">{{ song.comment }}</div>
+          <div class="details">
+            <div class="userName">George Jackson</div>
+            <div class="postTime">18 hrs ago</div>
+          </div>
+        </div>
+        <div class="queueSongInfo">
+          <img src="{{ song.thumb }}" />
+          <div class="details">
+            <div class="songTitle">{{ song.title }}</div>
+            <ul>
+              <li class="listens">Views: {{ song.views | number }}</li>
+              <li class="likes">Likes: {{ song.likes}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+
+    </div>
 </div>
 
 

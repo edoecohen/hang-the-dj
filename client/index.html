@@ -3,12 +3,22 @@
 <head>
 	<meta charset="UTF-8">
   <title>Hang the DJ</title>
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- <link href='http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css' rel='stylesheet' type='text/css'> -->
 </head>
 
 <body ng-controller="RoomsCtrl">
 
+
+  <header class="navbar navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <h1>Hang the DJ</h1>
+      </div>
+    </div>
+  </header>
   
-  <h1>Hang the DJ</h1>
   <div ng-view></div>
 
 <!-- 
@@ -19,9 +29,11 @@
 
   <script src="./bower_components/angular/angular.js"></script>
   <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 	<script src="./controllers/app.js"></script>
   <script src="./controllers/roomsCtrl.js"></script>
   <script src="./controllers/roomCtrl.js"></script>
+  <script src="./controllers/addSongCtrl.js"></script>
 
 
 </body>
