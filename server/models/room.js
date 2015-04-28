@@ -1,5 +1,6 @@
 var db = require('../config');
 var Sequelize = require('sequelize');
+var User = require('./user');
 
 var Room = db.define('room', {
   tableName: 'rooms',
@@ -15,17 +16,14 @@ var Room = db.define('room', {
   },
   roomPic: Sequelize.STRING,
   isPrivate: {
-    Sequelize.BOOLEAN,
+    type: Sequelize.BOOLEAN,
     allowNull: false,
     defaultValue: false
   },
-  createdBy: {
-
-  }
   profilePic: Sequelize.STRING
 });
 
-Room.hasOne(User)
+// Room.hasOne(User)
 
 Room.sync({force: true}).then(function () {
   // Table created

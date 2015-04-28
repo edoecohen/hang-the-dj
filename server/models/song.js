@@ -10,15 +10,19 @@ var Song = db.define('song', {
     primaryKey: true
   },
   title: Sequelize.STRING,
-  description: Sequelize.TEXT,
   sourceID: Sequelize.STRING,
   source: Sequelize.STRING,
-  thumb: Sequelize.STRING
+  thumb: Sequelize.STRING,
+  listens: Sequelize.INTEGER,
+  likes: Sequelize.INTEGER,
+  shares: Sequelize.INTEGER,
+  comment: Sequelize.TEXT
 });
 
 Song.sync({force: true}).then(function () {
   return Song.create({
-    title: 'With or Without You'
+    title: 'With or Without You',
+    comment: 'One of U2s all time bests!'
   });
 });
 

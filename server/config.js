@@ -9,7 +9,7 @@ var db = new Sequelize('database', 'username', 'password', {
     min: 0,
     idle: 10000
   },
-  storage: 'db/hangdj.sqlite'
+  storage: './db/hangdj.sqlite'
 });
 
 module.exports = db;

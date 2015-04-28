@@ -1,7 +1,8 @@
 <h3>Add a Song</h3>
 <form ng-submit="addSong()">
   <input ng-blur="getVidSrc(url)" ng-model="url"><br>
-  <textarea cols="40" rows="5" ng-model="description"></textarea><br>
+  <textarea ng-model="comment" ng-maxlength="140">Comment...</textarea>
+
   <button>Add Song</button>
 </form>
 
@@ -34,6 +35,7 @@
     <div class="songInfo">
       <img src="{{ song.thumb }}" />
       <div class="songTitle">{{ song.title }}</div>
+      <div class="songComment">{{ song.comment }}</div>
       <ul>
         <li class="listens">Views: {{ song.listens }}</li>
         <li class="likes">Likes: {{ song.likes}}</li>

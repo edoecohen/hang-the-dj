@@ -11,6 +11,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "^1.12.3",
     "express": "~4.9.x",
     "sequelize": "^2.1.0",
     "sqlite3": "^3.0.5"

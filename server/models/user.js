@@ -1,5 +1,6 @@
 var db = require('../config');
 var Sequelize = require('sequelize');
+var Room = require('./room');
 
 var User = db.define('user', {
   tableName: 'users',
@@ -23,7 +24,7 @@ var User = db.define('user', {
 });
 
 // User can follow many rooms
-User.hasMany(Room);
+// User.hasMany(Room);
 
 User.sync({force: true}).then(function () {
   // Table created
