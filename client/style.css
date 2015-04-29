@@ -164,9 +164,6 @@ button:focus {
 .songQueue {
   padding: 0;
 }
-.nowPlaying {
-  background-color: red;
-}
 .songInQueue {
   padding: 10px 15px;
   border-bottom: 1px solid grey;
