@@ -11,34 +11,35 @@
   <div class="row roomContainer">
     
     <div class="col-md-5 leftPlayer">
-      <div ng-show='showVidPlayer'>
-        <div class="userInfo">
-          <div class="userPic">
-            <img src="./assets/eli.jpg" />
-          </div>
-          <div class="postedBy">Posted by <span class="userName">Eli Miller</span></div>
-          <div class="postTime">18 hrs ago</div>
+      
+      <div class="userInfo">
+        <div class="userPic">
+          <img src="./assets/eli.jpg" />
         </div>
+        <div class="postedBy">Posted by <span class="userName">Eli Miller</span></div>
+        <div class="postTime">18 hrs ago</div>
+      </div>
 
-        <div class="videoPlayer">
-          <div class="videoWrapper">
-            <iframe class="youtube-player" type="text/html" width="100%" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
+      <div class="videoPlayer">
+        <div class="videoWrapper">
+          <!-- <iframe class="youtube-player" id="{{ player }}" type="text/html" width="100%" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe> -->
+          <youtube-video video-id="newSrc" player-vars="playerVars"></youtube-video>
+        </div>
+        <div class="videoControls">
+          <div class="back" ng-click="previousSong()"></div>
+          <!-- <h3>{{ data.snippet.title }}</h3> -->
+          <div class="songInfo">
+            <h1>{{ playSong.title }}</h1>
+            <ul>
+              <li class="views">{{ playSong.views | number }} views</li>
+              <li class="likes">{{ playSong.likes | number }} likes</li>
+            </ul>
           </div>
-          <div class="videoControls">
-            <div class="back"></div>
-            <!-- <h3>{{ data.snippet.title }}</h3> -->
-            <div class="songInfo">
-              <h1>The Beatles - Yellow Submarine</h1>
-              <ul>
-                <li class="views">21 views</li>
-                <li class="likes">12 likes</li>
-              </ul>
-            </div>
-            <div class="next"></div>
+          <div class="next" ng-click="nextSong()"></div>
 
-          </div>
         </div>
       </div>
+    
     </div>
   
     <div class="col-md-7 songQueue">
@@ -64,10 +65,8 @@
           <button ng-click="addSong()">Add</button>
         </footer>
       </div>
-
-
     
-      <div ng-repeat="song in songs" class="songInQueue">
+      <div ng-repeat="song in songs" class="songInQueue" ng-class="nowPlaying">
         <div class="queueUserInfo">
           <div class="userPic">
             <img src="./assets/george.jpg" />

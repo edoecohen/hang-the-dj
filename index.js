@@ -1,10 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-// var util = require('./lib/utility');
-// var partials = require('express-partials');
-// var bcrypt = require('bcrypt-nodejs');
-
 var db = require('./server/config');
 
 var User = require('./server/models/user');
@@ -18,10 +14,6 @@ app.use(express.static(__dirname + '/client'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-// app.get('/', function(request, response) {
-//   response.sendfile('index.html')
-// });
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
@@ -42,7 +34,6 @@ app.post('/room', function(req, res) {
 app.get('/room', function(req, res){
   Song.findAll({})
   .then(function (songs) {
-    console.log('new song:', songs[0].dataValues);
     res.status(200).json(songs);
   });
 });

@@ -164,11 +164,14 @@ button:focus {
 .songQueue {
   padding: 0;
 }
+.nowPlaying {
+  background-color: red;
+}
 .songInQueue {
   padding: 10px 15px;
   border-bottom: 1px solid grey;
 }
-.songInQueue:nth-child(even) {background: #F7F7F7;}
+.songInQueue:nth-child(even) {background: #F4F4F4;}
 .songInQueue:nth-child(odd) {background: white;}
 .queueUserInfo .userPic {
   float: left;
