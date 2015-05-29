@@ -14,16 +14,16 @@
       
       <div class="userInfo">
         <div class="userPic">
-          <img src="./assets/eli.jpg" />
+          <img src="{{ playSong.userPic }}" />
         </div>
-        <div class="postedBy">Posted by <span class="userName">Eli Miller</span></div>
+        <div class="postedBy">Posted by <span class="userName">{{ playSong.userName }}</span></div>
         <div class="postTime">18 hrs ago</div>
       </div>
 
       <div class="videoPlayer">
         <div class="videoWrapper">
-          <!-- <iframe class="youtube-player" id="{{ player }}" type="text/html" width="100%" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe> -->
-          <youtube-video video-id="newSrc" player-vars="playerVars" player="bestPlayer"></youtube-video>
+          <iframe class="youtube-player" type="text/html" width="100%" ng-src="{{ newSrc }}" allowfullscreen frameborder="0"> </iframe>
+          <!-- <youtube-video video-id="playSong.sourceID" player-vars="playerVars"></youtube-video> -->
         </div>
         <div class="videoControls">
           <div class="back" ng-click="previousSong()"></div>
@@ -69,11 +69,11 @@
       <div ng-repeat="song in songs" class="songInQueue">
         <div class="queueUserInfo">
           <div class="userPic">
-            <img src="./assets/george.jpg" />
+            <img src="{{ song.userPic }}" />
           </div>
           <div class="songComment">{{ song.comment }}</div>
           <div class="details">
-            <div class="userName">George Jackson</div>
+            <div class="userName">{{ song.userName }}</div>
             <div class="postTime">18 hrs ago</div>
           </div>
         </div>

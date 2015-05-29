@@ -1,8 +1,9 @@
 angular.module('hangDJ')
-.controller('RoomCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
+.controller('RoomCtrl', ['$scope', '$http', function($scope, $http){
   
   $scope.showAddSong = false;
-  // $scope.newSrc = '//www.youtube.com/embed/ZcX0vOVlEr8?modestbranding=1&showinfo=0&fs=0';
+  $scope.userName = 'Edoe Cohen';
+  $scope.userPic = 'https://scontent-2.2914.fna.fbcdn.net/hprofile-xpa1/v/t1.0-1/c0.0.224.224/1459277_10101022652887212_1838320199_n.jpg?oh=5cdb2ca5210c7d7bb5b4aefb38e5607d&oe=55990F31'
   $scope.counter = 0;
 
   $scope.getAllSongs = function(){
@@ -12,6 +13,7 @@ angular.module('hangDJ')
     })
     .then(function(resp){
       $scope.songs = resp.data;
+      console.log('songs in client:', $scope.songs);
       $scope.loadSong($scope.counter);
     })
   };
@@ -22,14 +24,11 @@ angular.module('hangDJ')
 
   $scope.loadSong = function(counter){
     $scope.playSong = $scope.songs[counter];
-    $scope.newSrc = $scope.playSong.sourceID;
-  };
+    console.log('loadingSong', $scope.playSong);
 
-  $scope.isThisPlaying = function(){
-    if(this.sourceID === $scope.newSrc){
-      return true;
-    }
-  }
+    $scope.newSrc = '//www.youtube.com/embed/' + $scope.playSong.sourceID + '?modestbranding=1&showinfo=0&fs=0&autoplay=1';
+    console.log('newSrc', $scope.newSrc);
+  };
 
   $scope.playerVars = {
     modestbranding: 1,
@@ -40,6 +39,7 @@ angular.module('hangDJ')
 
   $scope.$on('youtube.player.ended', function ($event, player) {
     $scope.nextSong();
+   // player.playVideo();
   });
 
   $scope.nextSong = function(){
@@ -108,10 +108,13 @@ angular.module('hangDJ')
       $scope.newSong.title = data.snippet.title;
       $scope.newSong.comment = $scope.comment;
       $scope.newSong.views = data.statistics.viewCount;
+      $scope.newSong.userName = $scope.userName;
+      $scope.newSong.userPic = $scope.userPic;
       $scope.newSong.likes = 0;
       $scope.newSong.shares = 0;
       $scope.newSong.source = 'youtube';
-      
+      console.log('new song!!!', data);
+
       $scope.songs.push($scope.newSong); 
       $scope.saveSong($scope.newSong);
     });

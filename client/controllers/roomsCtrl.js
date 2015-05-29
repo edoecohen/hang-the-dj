@@ -6,20 +6,53 @@ angular.module('hangDJ')
       roomName: 'Hack Reactor Jams',
       followers: 30,
       songs: 401,
-      roomPic: 'http://www.sfexaminer.com/binary/245c/OtherNews1.jpg'
+      roomPic: '../assets/room1.jpg'
 
     },
     {
       roomName: 'Hot Rap',
       followers: 21,
       songs: 14,
-      roomPic: 'http://www.omni-bus.com/n27/imagenes/rapper.jpg'
+      roomPic: '../assets/room2.jpg'
     },
     {
       roomName: 'All You Need to Dance',
       followers: 210,
       songs: 144,
-      roomPic: 'http://static1.squarespace.com/static/53ca0941e4b09aa5f73e3191/t/53ce07dae4b052122ab2d5d3/1406011369198/'
+      roomPic: '../assets/room3.jpeg'
+    },
+    {
+      roomName: 'Hack Reactor Jams',
+      followers: 30,
+      songs: 401,
+      roomPic: '../assets/room1.jpg'
+
+    },
+    {
+      roomName: 'Hack Reactor Jams',
+      followers: 30,
+      songs: 401,
+      roomPic: '../assets/room1.jpg'
+
+    },
+    {
+      roomName: 'Hot Rap',
+      followers: 21,
+      songs: 14,
+      roomPic: '../assets/room2.jpg'
+    },
+    {
+      roomName: 'All You Need to Dance',
+      followers: 210,
+      songs: 144,
+      roomPic: '../assets/room3.jpeg'
+    },
+    {
+      roomName: 'Hack Reactor Jams',
+      followers: 30,
+      songs: 401,
+      roomPic: '../assets/room1.jpg'
+
     }
   ];
 

@@ -1,21 +1,38 @@
+<!-- <h2>Select a Room</h2>
 
-<h2>Select a Room</h2>
-
-<form ng-submit="createRoom()">
-  <input ng-model="roomName"><br>
-  <input ng-model="roomPic"><br>
+<form ng-submit='createRoom()'>
+  <input ng-model='roomName'><br>
+  <input ng-model='roomPic'><br>
   <button>Create Room</button>
 </form>
-<hr>
+<hr> -->
 
-<button>Create a Room</button>
-<span>Search Rooms</span><input ng-model="query">
-<div class="roomsContainer">
-  <div class="oneRoom" ng-repeat="room in rooms | orderBy: 'roomName' | filter: query" style="background-image: url({{room.roomPic}}); background-size: cover; background-repeat: none; width: 200px; color: white">
-    <h4>{{ room.roomName }}</h4>
-    <ul>
-      <li>followers: {{ room.followers }}</li>
-      <li>songs: {{ room.songs }}</li>
-    </ul>
+<!-- <button>Create a Room</button> -->
+
+
+<div class='container roomsContainer'>
+  <div class='row'>
+    <div class='col-md-12 roomsHeader'>
+      <h1>Rooms</h1>
+      <div class="searchRooms">
+        <input ng-model='query' placeholder='Search for a room...'>
+        <button>Create a Room</button>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-3' ng-repeat='room in rooms | orderBy: "roomName" | filter: query'>
+      <div class='oneRoom' style='background-image: url({{room.roomPic}});'>
+        <div class="filter">
+          <div class="roomInfo">
+            <h1>{{ room.roomName }}</h1>
+            <ul>
+              <li>{{ room.followers }} followers |</li>
+              <li>{{ room.songs }} songs</li>
+            </ul>
+          </div>
+        </div>
+      </div>       
+    </div>
   </div>
 </div>

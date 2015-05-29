@@ -1,5 +1,5 @@
-.body {
-  background: #DFDFDF;
+body {
+  background: #393939;
 }
 
 .navbar {
@@ -14,6 +14,80 @@
   background-repeat: no-repeat;
   background-size: 38px;
   padding-left: 50px;
+}
+
+/***** ROOMS *****/
+.roomsHeader {
+  color: white;
+  margin-top: 30px;
+}
+.roomsHeader h1 {
+  display: inline-block;
+  margin: 0;
+}
+.searchRooms {
+  float: right;
+  margin-right: 13px;
+}
+.searchRooms input {
+  background-color: #393939;
+  border: 1px solid white;
+  border-radius: 3px;
+  width: 200px;
+  padding: 7px 10px;
+  background-image: url(assets/searchGrey.png);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 10px 8px;
+  padding-left: 35px;
+}
+.searchRooms ::-webkit-input-placeholder {
+  color: #A0A0A0;
+}
+.searchRooms input:focus {
+  outline: 0;
+  background-image: url(assets/searchWhite.png);
+}
+.searchRooms button {
+  background-color: rgba(189, 189, 189, 0.1);
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 7px 10px;
+  margin-left: 20px;
+}
+.searchRooms button:hover {
+  background-color: #393939;
+}
+
+.filter {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+}
+
+.oneRoom {
+  margin-top: 40px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: none;
+  width: 250px;
+  color: white;
+}
+.roomInfo {
+  position: absolute;
+  bottom: 10px;
+  margin-left: 15px;
+}
+.roomInfo h1 {
+  margin: 0;
+  font-size: 1.4em;
+}
+.roomInfo ul {
+  list-style: none;
+  padding: 0;
+  color: #A1A1A1;
+}
+.roomInfo ul li {
+  display: inline-block;
 }
 
 /***** ROOM HEADER *****/
